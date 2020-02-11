@@ -38,6 +38,10 @@ const routes: Routes = [
   {
     path: 'checklist',
     loadChildren: () => import('./checklist/checklist.module').then( m => m.ChecklistPageModule)
+  },
+  {
+    path: 'google-maps',
+    loadChildren: () => import('./google-maps/google-maps.module').then( m => m.GoogleMapsPageModule)
   }
 
 ];
