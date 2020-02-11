@@ -25,8 +25,8 @@ export class AddPage implements OnInit {
 
   ngOnInit() {
     this.addForm = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(3) ] ],
-      note: ['', [Validators.required, Validators.minLength(5) ] ]
+      name: ['', [Validators.required, Validators.minLength(1) ] ],
+      note: ['', [Validators.required, Validators.minLength(1) ] ]
     })
   }
 
