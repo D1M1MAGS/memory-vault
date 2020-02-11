@@ -14,11 +14,11 @@
     <ion-list>
       <ion-item>
         <ion-label position="stacked">Name</ion-label>
-        <ion-input type="text" placeholder="name for note" name="name" formControlName="name"></ion-input>
+        <ion-input type="text" placeholder="Memory name" name="name" formControlName="name"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="stacked">Note</ion-label>
-        <ion-textarea name="note" formControlName="note"></ion-textarea>
+        <ion-textarea name="note" placeholder = "Memory Description" formControlName="note"></ion-textarea>
       </ion-item>
     </ion-list>
     <ion-button expand = "block" color="tertiary" (click) = "takePhoto()" [disabled]="!addForm.valid || photoTaken">
@@ -26,7 +26,7 @@
     </ion-button>
 
     <ion-button type="submit" expand="block" color="primary" [disabled]="!addForm.valid || uploading" (click)="submit()">
-      <span *ngIf="!uploading">Add</span>
+      <span *ngIf="!uploading">Add Memory</span>
       <span *ngIf="uploading">Uploading image...</span>
     </ion-button>
   </form>

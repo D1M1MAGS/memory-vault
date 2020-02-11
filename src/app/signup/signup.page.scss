@@ -1,6 +1,13 @@
 ion-content {
   form {
     margin-top: 15vh;
-    
+    ion-item{
+      ion-label.sign-up-label {
+        text-align: center;
+        font-size: 0.8rem;
+        margin-top: 5rem;
+        margin-bottom: 10rem;
+      }
+    }
   }
 }
