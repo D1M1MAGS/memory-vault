@@ -6,6 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { GoogleMapsPageRoutingModule } from './google-maps-routing.module';
 
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { GoogleMapsPage } from './google-maps.page';
 
 @NgModule({
