@@ -5,8 +5,6 @@ import { map } from 'rxjs/operators';
 import { Note } from '../models/note.interface';
 import { AngularFireAuth } from '@angular/fire/auth';
 
-
-
 @Injectable({
   providedIn: 'root'
 })

@@ -1,5 +1,5 @@
 ion-content {
-  --background: lightpink;
+  /*--background: lightpink;*/
   ion-card{
     ion-card-title {
       text-overflow: ellipsis;
@@ -16,7 +16,7 @@ ion-content {
     ion-card-content {
       min-height: 5rem;
       background-size: cover;
-      background-color: lightgrey;
+      background-color: rosybrown;
     }
   }
 }
