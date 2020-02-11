@@ -45,8 +45,9 @@ export class AppComponent {
     this.afAuth.authState.subscribe(( user ) => {
       if( user ) {
         this.appPages = [
-          {title: 'Notes' , url: '/notes', icon: 'home'},
-          {title: 'Checklist' , url: '/checklist', icon: 'list'}
+          {title: 'Notes' , url: '/notes', icon: 'book'},
+          {title: 'Checklist' , url: '/checklist', icon: 'list'},
+          {title: 'Discovery Map' , url: '/home', icon: 'map'}
         ]
         this.user = user;
         this.router.navigate( ['/notes'] );
