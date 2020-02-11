@@ -46,7 +46,7 @@ export class AppComponent {
       if( user ) {
         this.appPages = [
           {title: 'Notes' , url: '/notes', icon: 'home'},
-          {title: 'Settings' , url: '/settings', icon: 'settings'}
+          {title: 'Checklist' , url: '/checklist', icon: 'list'}
         ]
         this.user = user;
         this.router.navigate( ['/notes'] );

@@ -26,7 +26,7 @@ export class DataService {
         this.uid = user.uid;
         // create path
         const path = `folders/${this.uid}/userfolders`;
-        // set the collection
+        // set the collect
         this.notesCollection = afs.collection<Note>(path);
         // this.notes$ = this.getNotes();
         this.ncSub = this.getNotes().subscribe((data) => {

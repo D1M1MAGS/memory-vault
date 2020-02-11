@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Subscription } from 'rxjs';
+import { Task } from '../models/task.interface';
+import { ChecklistService } from '../checklist.service';
 
 @Component({
   selector: 'app-checklist',
@@ -7,9 +11,49 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChecklistPage implements OnInit {
 
-  constructor() { }
+  taskForm: FormGroup;
+  timerSub: Subscription;
+  time: number;
+  history:Array<Task> = [];
+  historySub:Subscription;
+  
+  constructor(
+    private formBuilder:FormBuilder,
+    private checklistService : ChecklistService
+    
+  ) { }
 
   ngOnInit() {
+
+    this.taskForm = this.formBuilder.group({
+      taskName: ['', [Validators.required, Validators.minLength(1) ] ] 
+     });
+     this.historySub = this.checklistService.list$.subscribe( taskData => this.history = taskData );
+   
+  }
+
+  addTask() {
+    let task:Task= {
+      name: this.taskForm.get('taskName').value,
+      created: new Date().getTime(),
+      status: false
+  
+    }
+    this.checklistService.addToList( task );
+    this.taskForm.reset();  
+  }
+  
+  changeCheckboxStatus(id:number){
+    this.checklistService.taskList.forEach((tasks)=> {
+      if(tasks.created == id){
+        tasks.status = true;
+      }
+    });
+    this.checklistService.saveData();
+  }
+
+  delete( itemStart ) {
+    this.checklistService.deleteFromList( itemStart );
   }
 
 }
