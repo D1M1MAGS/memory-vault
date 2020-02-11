@@ -6,7 +6,7 @@
 
 <ion-content>
   <div class="logo-container">
-    <img class="logo" src="assets/logo.svg">
+    <img class="logo" src="assets/logoOne.svg">
   </div>
   <form [formGroup]="signInForm" id="sign-in">
     <ion-list>
@@ -19,6 +19,8 @@
         <ion-input formControlName="password" type="password" placeholder="password" name="password"></ion-input>
       </ion-item>
       <ion-button [disabled]="!signInForm.valid" expand="block" type="submit" color="secondary" (click)="signIn()">Sign in</ion-button>
+      
+      <footer vertical="bottom" slot="fixed">
       <ion-item>
         <ion-label class="sign-up-label">Don't have an account?</ion-label>
       </ion-item>
@@ -27,6 +29,7 @@
           Sign up
         </ion-button>
       </div>
+      </footer>
     </ion-list>
   </form>
 </ion-content>
