@@ -34,6 +34,10 @@ const routes: Routes = [
   {
     path: 'note-detail',
     loadChildren: () => import('./note-detail/note-detail.module').then( m => m.NoteDetailPageModule)
+  },
+  {
+    path: 'checklist',
+    loadChildren: () => import('./checklist/checklist.module').then( m => m.ChecklistPageModule)
   }
 
 ];
